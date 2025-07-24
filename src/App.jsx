@@ -29,10 +29,10 @@ const getFavRecipes=()=>{
 
 const getRecipe=async({params})=>{
   let recipe;
-  await axios.get(`http://localhost:5000/recipe/${params.id}`)
+  await axios.get(` https://backend-foodrecipe-o3vy.onrender.com/recipe/${params.id}`)
   .then(res=>recipe=res.data)
 
-  await axios.get(`http://localhost:5000/user/${recipe.createdBy}`)
+  await axios.get(` https://backend-foodrecipe-o3vy.onrender.com/user/${recipe.createdBy}`)
   .then(res=>{
     recipe={...recipe,email:res.data.email}
   })
