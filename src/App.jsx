@@ -29,7 +29,7 @@ const getFavRecipes=()=>{
 
 const getRecipe=async({params})=>{
   let recipe;
-  await axios.get(` https://backend-foodrecipe-toj3.onrender.com/recipe/${params.id}`)
+  await axios.get(`https://backend-foodrecipe-toj3.onrender.com/recipe/${params.id}`)
   .then(res=>recipe=res.data)
 
   await axios.get(`https://backend-foodrecipe-toj3.onrender.com/user/${recipe.createdBy}`)
