@@ -11,7 +11,7 @@ import RecipeDetails from './pages/RecipeDetails'
 
 const getAllRecipes=async()=>{
   let allRecipes=[]
-  await axios.get('https://backend-foodrecipe-toj3.onrender/recipe').then(res=>{
+  await axios.get('https://backend-foodrecipe-toj3.onrender.com/recipe').then(res=>{
     allRecipes=res.data
   })
   return allRecipes
