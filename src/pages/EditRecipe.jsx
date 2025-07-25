@@ -9,7 +9,7 @@ export default function EditRecipe() {
 
     useEffect(()=>{
         const getData=async()=>{
-            await axios.get(`https://backend-foodrecipe-toj3.onrender.com/${id}`)
+            await axios.get(`https://backend-foodrecipe-toj3.onrender.com/recipe/${id}`)
             .then(response=>{
                 let res=response.data
                 setRecipeData({
