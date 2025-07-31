@@ -3,11 +3,14 @@ import foodRecipe from '../assets/foodRecipe.png'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import RecipeItems from '../components/RecipeItems'
+import { useOutletContext } from 'react-router-dom'
+
 import { useNavigate } from 'react-router-dom'
 import Modal from '../components/Modal'
 import InputForm from '../components/InputForm'
 
 export default function Home() {
+    const { setMenuOpen } = useOutletContext()
     const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false)
 
@@ -26,7 +29,8 @@ export default function Home() {
                 <div className='left'>
                     <h1>Food Recipe</h1>
                     <h5>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</h5>
-                    <button onClick={addRecipe}>Share your recipe</button>
+                    <button onClick={() => (addRecipe(), setMenuOpen(false))}>Share your recipe</button>
+
                 </div>
                 <div className='right'>
                     <img src={foodRecipe} width="320px" height="300px"></img>
